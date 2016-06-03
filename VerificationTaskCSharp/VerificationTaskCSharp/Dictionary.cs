@@ -132,7 +132,7 @@ namespace VerificationTaskCSharp
 
         private Int32 counter;          //Счётчик слов
         private Reader reader;          //Экземпляр объекта для чтения файла
-        string [] data;                 //Словарь
+        private string[] data;                 //Словарь
         private List<string> element;   //Пара слово-разделитель
     }
 }
