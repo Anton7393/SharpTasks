@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 
 namespace VerificationTaskCSharp
@@ -15,7 +16,7 @@ namespace VerificationTaskCSharp
         public Dictionary(string _path)
         {
             counter = 0;
-            data = new string [1];
+            data = new Queue<string>();
             reader = new Reader(_path);
 
             element = new List<string>
@@ -56,9 +57,9 @@ namespace VerificationTaskCSharp
             {
                 return false;
             }
-            for (Int32 i = 0; i <= data.Length - 1; i++)
+            foreach (string data_word in data)
             {
-                if (data[i] == _word)
+                if (data_word == _word)
                 {
                     return true;
                 }
@@ -81,8 +82,7 @@ namespace VerificationTaskCSharp
         /// <param name="_word">Слово</param>
         private void putWord(string _word)
         {
-            data[data.Length - 1] = _word;
-            Array.Resize<string>(ref data, data.Length + 1);
+            data.Enqueue(_word);
         }
 
         /// <summary>
@@ -132,7 +132,7 @@ namespace VerificationTaskCSharp
 
         private Int32 counter;          //Счётчик слов
         private Reader reader;          //Экземпляр объекта для чтения файла
-        string [] data;                 //Словарь
+        private Queue<string> data;     //Словарь
         private List<string> element;   //Пара слово-разделитель
     }
 }
