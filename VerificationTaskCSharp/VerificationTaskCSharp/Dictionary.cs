@@ -15,7 +15,7 @@ namespace VerificationTaskCSharp
         public Dictionary(string _path)
         {
             counter = 0;
-            data = new string [1];
+            data = new Dictionary<int, string>();
             reader = new Reader(_path);
 
             element = new List<string>
@@ -56,7 +56,7 @@ namespace VerificationTaskCSharp
             {
                 return false;
             }
-            for (Int32 i = 0; i <= data.Length - 1; i++)
+            for (var i = 0; i <= data.Count - 1; i++)
             {
                 if (data[i] == _word)
                 {
@@ -81,8 +81,7 @@ namespace VerificationTaskCSharp
         /// <param name="_word">Слово</param>
         private void putWord(string _word)
         {
-            data[data.Length - 1] = _word;
-            Array.Resize<string>(ref data, data.Length + 1);
+            data.Add(counter-1, _word);
         }
 
         /// <summary>
@@ -130,9 +129,9 @@ namespace VerificationTaskCSharp
             }    
         }
 
-        private Int32 counter;          //Счётчик слов
-        private Reader reader;          //Экземпляр объекта для чтения файла
-        string [] data;                 //Словарь
-        private List<string> element;   //Пара слово-разделитель
+        private Int32 counter;                  //Счётчик слов
+        private Reader reader;                  //Экземпляр объекта для чтения файла
+        private Dictionary<int ,string> data;   //Словарь
+        private List<string> element;           //Пара слово-разделитель
     }
 }
