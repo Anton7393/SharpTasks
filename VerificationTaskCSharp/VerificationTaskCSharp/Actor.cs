@@ -6,7 +6,7 @@ namespace VerificationTaskCSharp
     /// <summary>
     /// Класс обработчика
     /// </summary>
-    class Actor
+    public class Actor
     {
         /// <summary>
         /// Конструктор, инициализирует значения по умолчанию

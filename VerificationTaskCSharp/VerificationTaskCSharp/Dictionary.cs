@@ -6,7 +6,7 @@ namespace VerificationTaskCSharp
     /// <summary>
     /// Класс <c>Dictionary</c> считывает из файла и хранит словарь
     /// </summary>
-    class Dictionary
+    public class Dictionary
     {
         /// <summary>
         /// Конструктор, устанавливает путь к файлу

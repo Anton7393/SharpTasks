@@ -9,7 +9,7 @@ namespace VerificationTaskCSharp
     /// Класс <c>Writer</c> предназначен для подключения
     /// потока файлового вывода и записи текста в файл
     /// </summary>
-    class Reader
+    public class Reader
     {
         /// <summary>
         /// Конструктор 
